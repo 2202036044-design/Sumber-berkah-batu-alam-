@@ -6,12 +6,6 @@ import {defineConfig} from 'vite';
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        artikel: path.resolve(__dirname, 'artikel.html'),
-      },
-    },
     outDir: 'dist',
     emptyOutDir: true,
   },
