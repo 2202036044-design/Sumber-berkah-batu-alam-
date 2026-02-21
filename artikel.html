@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel & Tips - Sumber Berkah Batu Alam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F9F9F9] text-[#333]">
+
+    <!-- Navbar -->
+    <nav id="main-nav" class="nav-sticky fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24 transition-all duration-300" id="nav-container">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 md:gap-3 group" id="nav-logo">
+                        <div class="logo-icon w-8 h-8 md:w-10 md:h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <span class="text-sm md:text-xl font-serif font-black tracking-tighter text-white transition-colors" id="nav-text">
+                            SUMBER <span class="text-[#D4AF37]">BERKAH</span>
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-10 font-bold text-xs uppercase tracking-[0.2em] text-white transition-colors" id="nav-links">
+                    <a href="index.html#beranda" class="hover:text-[#D4AF37] transition-colors">Beranda</a>
+                    <a href="index.html#tentang" class="hover:text-[#D4AF37] transition-colors">Tentang</a>
+                    <a href="index.html#katalog" class="hover:text-[#D4AF37] transition-colors">Katalog</a>
+                    <a href="index.html#galeri" class="hover:text-[#D4AF37] transition-colors">Galeri</a>
+                    <a href="#" class="text-[#D4AF37]">Artikel</a>
+                    <a href="index.html#lokasi" class="hover:text-[#D4AF37] transition-colors">Lokasi</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button id="cart-btn" class="relative p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-gold hover:border-gold transition-all group flex items-center justify-center" title="Keranjang Belanja">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span id="cart-badge" class="absolute -top-2 -right-2 bg-gold text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow-lg hidden">0</span>
+                    </button>
+                    <button class="md:hidden p-2 text-white" id="mobile-menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-48 pb-24 bg-[#1A1A1A] text-white text-center px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center"></div>
+        <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up">
+            <h4 class="text-[#D4AF37] uppercase tracking-[0.4em] font-bold mb-4 text-xs">Blog & Insights</h4>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">Artikel & Tips Batu Alam</h1>
+            <p class="text-white/70 font-medium max-w-2xl mx-auto">Temukan berbagai inspirasi, panduan perawatan, dan tren terbaru seputar penggunaan batu alam untuk hunian impian Anda.</p>
+        </div>
+    </header>
+
+    <!-- Article List -->
+    <main class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Article Card 1 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <img src="https://picsum.photos/seed/blog1/800/600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37]/10 px-3 py-1 rounded-full">Tips Perawatan</span>
+                        <span class="text-gray-400 text-xs">20 Feb 2026</span>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-[#D4AF37] transition-colors">Cara Merawat Batu Alam Agar Tetap Berkilau</h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Batu alam memerlukan perawatan khusus agar tekstur dan warnanya tidak pudar seiring waktu. Pelajari teknik pembersihan yang benar tanpa merusak pori-pori batu...</p>
+                    <a href="#" class="inline-flex items-center gap-2 font-bold text-sm text-[#D4AF37] group-hover:gap-4 transition-all">
+                        Baca Selengkapnya
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Article Card 2 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <img src="https://picsum.photos/seed/blog2/800/600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37]/10 px-3 py-1 rounded-full">Tren Desain</span>
+                        <span class="text-gray-400 text-xs">18 Feb 2026</span>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-[#D4AF37] transition-colors">5 Jenis Batu Alam Terpopuler untuk Dinding Luar</h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Memilih batu alam untuk eksterior harus mempertimbangkan ketahanan terhadap cuaca ekstrem. Berikut adalah daftar batu alam yang paling tahan lama...</p>
+                    <a href="#" class="inline-flex items-center gap-2 font-bold text-sm text-[#D4AF37] group-hover:gap-4 transition-all">
+                        Baca Selengkapnya
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Article Card 3 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <img src="https://picsum.photos/seed/blog3/800/600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37]/10 px-3 py-1 rounded-full">Panduan</span>
+                        <span class="text-gray-400 text-xs">15 Feb 2026</span>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-[#D4AF37] transition-colors">Mengenal Perbedaan Tekstur Batu Andesit dan Palimanan</h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Setiap jenis batu memiliki karakteristik unik yang cocok untuk fungsi ruangan yang berbeda. Pahami perbedaannya sebelum Anda memutuskan membeli...</p>
+                    <a href="#" class="inline-flex items-center gap-2 font-bold text-sm text-[#D4AF37] group-hover:gap-4 transition-all">
+                        Baca Selengkapnya
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Article Card 4 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <img src="https://picsum.photos/seed/blog4/800/600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37]/10 px-3 py-1 rounded-full">Konstruksi</span>
+                        <span class="text-gray-400 text-xs">10 Feb 2026</span>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-[#D4AF37] transition-colors">Teknik Pemasangan Batu Alam yang Benar</h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Pemasangan yang salah bisa menyebabkan batu terlepas atau berlumut. Ikuti panduan langkah demi langkah dari ahli kami...</p>
+                    <a href="#" class="inline-flex items-center gap-2 font-bold text-sm text-[#D4AF37] group-hover:gap-4 transition-all">
+                        Baca Selengkapnya
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-20 gap-4">
+                <button class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-[#D4AF37] hover:text-white transition-all font-bold">1</button>
+                <button class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-[#D4AF37] hover:text-white transition-all font-bold">2</button>
+                <button class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-[#D4AF37] hover:text-white transition-all font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333] text-white pt-24 pb-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-gray-500 text-xs text-center md:text-left">© 2026 Sumber Berkah Batu Alam. All Rights Reserved.</p>
+                <div class="flex gap-8 text-xs text-gray-500">
+                    <a href="index.html" class="hover:text-white transition-colors">Kembali ke Beranda</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar (Same as index) -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300"></div>
+    <aside id="cart-sidebar" class="fixed top-0 right-0 w-full max-w-md h-full bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-xl font-bold">Keranjang Belanja</h2>
+            <button id="close-cart" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+        <div class="p-6 border-t border-gray-100 bg-[#F9F9F9]">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-gray-500 font-medium">Total Estimasi</span>
+                <span id="cart-total" class="text-2xl font-serif font-bold text-[#D4AF37]">Rp 0</span>
+            </div>
+            <form id="checkout-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Nama Lengkap</label>
+                    <input type="text" id="cust-name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Alamat Pengiriman</label>
+                    <textarea id="cust-address" required rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#D4AF37] hover:bg-[#B8962E] text-white py-4 rounded-xl font-bold transition-all">Checkout via WhatsApp</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Product Modal -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-[80] hidden transition-opacity duration-300"></div>
+    <div id="product-modal" class="fixed inset-0 z-[90] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative">
+            <button id="close-modal" class="absolute top-6 right-6 p-2 bg-white/80 backdrop-blur-md rounded-full text-charcoal hover:bg-gold hover:text-white transition-all z-10 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="modal-content" class="p-8 md:p-12">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/6285364551484" target="_blank" class="wa-float fixed bottom-8 right-8" title="Hubungi Kami via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.98-.51-5.725-1.479l-6.269 1.647zm5.99-4.469l.303.18c1.483.882 3.19 1.35 4.933 1.35 5.407 0 9.808-4.401 9.808-9.808 0-2.621-1.022-5.086-2.877-6.942-1.854-1.855-4.318-2.877-6.931-2.877-5.407 0-9.808 4.401-9.808 9.808 0 2.029.544 4.016 1.571 5.711l.197.325-1.011 3.689 3.789-.996zm11.333-6.818c-.328-.164-1.94-.957-2.241-1.067-.301-.11-.52-.164-.738.164-.219.328-.848 1.067-1.039 1.286-.192.219-.383.246-.711.082-.328-.164-1.386-.511-2.641-1.63-1.039-.926-1.74-2.071-1.944-2.427-.204-.355-.022-.547.142-.711.147-.147.328-.383.492-.575.164-.192.219-.328.328-.547.11-.219.055-.411-.027-.575-.082-.164-.738-1.778-1.011-2.435-.267-.641-.539-.554-.738-.564-.192-.01-.41-.01-.629-.01s-.575.082-.875.411c-.3.328-1.148 1.123-1.148 2.738 0 1.615 1.176 3.176 1.339 3.395.164.219 2.313 3.532 5.603 4.954.783.339 1.393.541 1.87.693.785.249 1.5.214 2.066.129.63-.095 1.94-.794 2.214-1.56.274-.767.274-1.423.192-1.56-.082-.137-.3-.219-.629-.383z"/>
+        </svg>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="data-produk.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
