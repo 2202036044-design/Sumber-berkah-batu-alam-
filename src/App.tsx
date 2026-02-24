@@ -32,9 +32,9 @@ export default function App() {
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [currentFilter, setCurrentFilter] = useState('Semua');
+  const [currentFilter, setCurrentFilter] = useState('Best Seller');
   const [searchQuery, setSearchQuery] = useState('');
-  const [displayCount, setDisplayCount] = useState(12);
+  const [displayCount, setDisplayCount] = useState(16);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -74,7 +74,9 @@ export default function App() {
   const filteredProducts = useMemo(() => {
     return productsData
       .filter(p => {
-        const matchesFilter = currentFilter === 'Semua' || p.category === currentFilter;
+        const matchesFilter = currentFilter === 'Best Seller'
+          ? p.bestSeller === true
+          : p.category === currentFilter;
         const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesFilter && matchesSearch;
       })
@@ -164,13 +166,12 @@ export default function App() {
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16 md:h-20' : 'h-20 md:h-24'}`}>
             <div className="flex items-center">
               <a href="#" className="flex items-center gap-2 md:gap-3 group">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-110">
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ repeat: Infinity, duration: 5 }}
-                  >
-                    <ShoppingCart size={isScrolled ? 20 : 24} />
-                  </motion.div>
+                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                  <img
+                    src="/logo/Logo Sumber Berkah Batu Alam.webp"
+                    alt="Logo Sumber Berkah Batu Alam"
+                    className="w-full h-full object-cover rounded-full shadow-lg border-2 border-[#D4AF37]/20"
+                  />
                 </div>
                 <span className={`text-sm md:text-xl font-serif font-black tracking-tighter transition-colors ${isScrolled ? 'text-[#1A1A1A]' : 'text-white'}`}>
                   SUMBER <span className="text-[#D4AF37]">BERKAH</span>
@@ -249,7 +250,7 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="beranda" data-aos="fade-up" className="relative h-screen flex items-center justify-center px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-[url('/logo/sumber-berkah-batu-alam.webp')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
         </div>
         <div className="relative z-10 max-w-4xl text-center text-white">
@@ -307,7 +308,7 @@ export default function App() {
               className="relative"
             >
               <div className="absolute -top-10 -left-10 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
-              <img src="https://picsum.photos/seed/about/800/1000" alt="Tentang Kami" className="rounded-2xl shadow-2xl relative z-10" />
+              <img src="/logo/produk/gallery/sumber-berkah-batu-alam-gallery6.jpg" alt="Tentang Kami" className="rounded-2xl shadow-2xl relative z-10" />
               <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-xl shadow-xl z-20 hidden md:block border border-gray-50">
                 <p className="text-4xl font-serif font-bold text-[#D4AF37]">15+</p>
                 <p className="text-xs uppercase tracking-widest font-bold text-gray-400">Tahun Pengalaman</p>
@@ -366,12 +367,12 @@ export default function App() {
             {/* Filter & Search */}
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
               <div className="flex flex-wrap justify-center bg-white p-1.5 rounded-3xl border border-gray-100 shadow-sm gap-1">
-                {['Semua', 'Batu Dinding', 'Batu Lantai', 'Koral & Taman', 'Marmer', 'Lain-lain'].map((cat) => (
+                {['Best Seller', 'Wallcladding', 'Batu Dinding', 'Batu Lantai', 'Koral & Taman', 'Marmer Dll'].map((cat) => (
                   <button
                     key={cat}
                     onClick={() => {
                       setCurrentFilter(cat);
-                      setDisplayCount(12);
+                      setDisplayCount(16);
                     }}
                     className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all ${currentFilter === cat
                       ? 'bg-[#D4AF37] text-white shadow-lg shadow-[#D4AF37]/20'
@@ -446,7 +447,7 @@ export default function App() {
           {displayCount < filteredProducts.length && (
             <div className="text-center mt-16">
               <button
-                onClick={() => setDisplayCount(prev => prev + 12)}
+                onClick={() => setDisplayCount(prev => prev + 16)}
                 className="border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white px-12 py-4 rounded-full font-bold transition-all transform hover:scale-105"
               >
                 Lihat Selengkapnya
@@ -490,15 +491,15 @@ export default function App() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
             {[
-              { id: 1, title: 'Modern Minimalist', desc: 'Andesit Bakar & Candi', span: 'row-span-2', img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800' },
-              { id: 2, title: 'Luxury Poolside', desc: 'Bobos Lapis & Ziolit', span: 'col-span-2', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=800' },
-              { id: 3, title: 'Elegant Wall', desc: 'Walcloding Pacito', span: '', img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800' },
-              { id: 4, title: 'Rustic Terrace', desc: 'Palimanan RTA', span: '', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800' },
-              { id: 5, title: 'Contemporary Facade', desc: 'Walcloding 006', span: 'col-span-2 row-span-2', img: 'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800' },
-              { id: 6, title: 'Natural Garden', desc: 'Andesit Bakar', span: '', img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=800' },
-              { id: 7, title: 'Modern Exterior', desc: 'Batu Alam Mix', span: 'row-span-2', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800' },
-              { id: 8, title: 'Minimalist Path', desc: 'Andesit 3030', span: '', img: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&q=80&w=800' },
-              { id: 9, title: 'Luxury Entrance', desc: 'Marmer Statuario', span: 'col-span-2', img: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&q=80&w=800' },
+              { id: 1, title: 'Luxury Terrace', desc: 'Palimanan & Candi', span: 'col-span-2', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery2.jpg' },
+              { id: 2, title: 'Modern Minimalist', desc: 'Palimanan & Candi', span: 'col-span-2', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery1.jpg' },
+              { id: 3, title: 'Elegant Wall', desc: 'Walcloding Pacito', span: '', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery3.jpg' },
+              { id: 4, title: 'Rustic Terrace', desc: 'Palimanan RTA', span: '', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery6.jpg' },
+              { id: 5, title: 'Contemporary Facade', desc: 'Walcloding 006', span: 'col-span-2 row-span-2', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery4.jpg' },
+              { id: 6, title: 'Natural Garden', desc: 'Andesit Bakar', span: '', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery7.jpg' },
+              { id: 7, title: 'Modern Exterior', desc: 'Batu Alam Mix', span: 'row-span-2', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery8.jpg' },
+              { id: 8, title: 'Minimalist Path', desc: 'Andesit 3030', span: '', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery5.jpg' },
+              { id: 9, title: 'Luxury Entrance', desc: 'Marmer Statuario', span: 'col-span-2', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery9.jpg' },
             ].map((item) => (
               <motion.div
                 key={item.id}
@@ -531,9 +532,9 @@ export default function App() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { cat: 'Tips Interior', title: 'Cara Merawat Batu Alam Agar Tetap Berkilau', desc: 'Batu alam memerlukan perawatan khusus agar tekstur dan warnanya tidak pudar seiring waktu...', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800' },
-              { cat: 'Tren Desain', title: '5 Jenis Batu Alam Terpopuler untuk Dinding Luar', desc: 'Memilih batu alam untuk eksterior harus mempertimbangkan ketahanan terhadap cuaca ekstrem...', img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800' },
-              { cat: 'Panduan', title: 'Mengenal Perbedaan Tekstur Batu Andesit dan Palimanan', desc: 'Setiap jenis batu memiliki karakteristik unik yang cocok untuk fungsi ruangan yang berbeda...', img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800' },
+              { cat: 'Tips Interior', title: 'Cara Merawat Batu Alam Agar Tetap Berkilau', desc: 'Batu alam memerlukan perawatan khusus agar tekstur dan warnanya tidak pudar seiring waktu...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery3.jpg' },
+              { cat: 'Tren Desain', title: '5 Jenis Batu Alam Terpopuler untuk Dinding Luar', desc: 'Memilih batu alam untuk eksterior harus mempertimbangkan ketahanan terhadap cuaca ekstrem...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery6.jpg' },
+              { cat: 'Panduan', title: 'Mengenal Perbedaan Tekstur Batu Andesit dan Palimanan', desc: 'Setiap jenis batu memiliki karakteristik unik yang cocok untuk fungsi ruangan yang berbeda...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-home.jpg' },
             ].map((art, idx) => (
               <motion.div
                 key={idx}
@@ -568,29 +569,55 @@ export default function App() {
             <h2 className="text-4xl font-bold">Lokasi Cabang</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { city: 'Bukittinggi', address: 'Jalan Raya Bukittinggi - Payakumbuh 26191 Kabupaten Agam, Indonesia.' },
-              { city: 'Payakumbuh', address: 'Jalan Raya Bukittinggi - Payakumbuh 26191 Kabupaten Agam, Indonesia.' },
-              { city: 'Padang', address: 'Jalan Raya Bukittinggi - Payakumbuh 26191 Kabupaten Agam, Indonesia.' },
+              {
+                city: 'Bukittinggi',
+                address: 'Jl. Raya Bukittinggi - Payakumbuh No.Km, RW.7, Biaro Gadang, Kec. Ampek Angkek, Kabupaten Agam, Sumatera Barat 26192',
+                mapUrl: 'https://maps.app.goo.gl/5xjUKzvLWMgLreXB6?g_st=aw'
+              },
+              {
+                city: 'Tanjung Pati',
+                address: 'Jl. Tj. Pati, Koto Tuo, Kec. Harau, Kabupaten Lima Puluh Kota, Sumatera Barat 26271',
+                mapUrl: 'https://maps.app.goo.gl/msWYJTS3KNdA9WW56?g_st=aw'
+              },
+              {
+                city: 'Padang Tinggi',
+                address: 'Jl. Imam Bonjol, Padang Tinggi, Kec. Payakumbuh Bar., Kota Payakumbuh, Sumatera Barat 26223',
+                mapUrl: 'https://maps.app.goo.gl/YpGV4gtERqptMwoWA?g_st=aw'
+              },
+              {
+                city: 'Payakumbuh',
+                address: 'Jl. Raya Bukittinggi - Payakumbuh No.KM, RW.6, Biaro Gadang, Kec. Ampek Angkek, Kabupaten Agam, Sumatera Barat 26191',
+                mapUrl: 'https://maps.app.goo.gl/gqTHnHxjEN7pvuMy7?g_st=aw'
+              },
             ].map((loc, idx) => (
-              <motion.div
+              <a
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-[#F9F9F9] p-8 rounded-2xl border border-gray-100 hover:shadow-xl transition-all group"
+                href={loc.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
               >
-                <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37] mb-6 group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
-                  <MapPin size={24} />
-                </div>
-                <h3 className="text-xl font-bold mb-4">{loc.city}</h3>
-                <p className="text-gray-500 text-sm mb-6 leading-relaxed">{loc.address}</p>
-                <a href="https://maps.app.goo.gl/abMSfc2p4LSUS24F8" target="_blank" className="text-[#D4AF37] font-bold text-sm flex items-center gap-2 hover:gap-4 transition-all">
-                  Buka Google Maps <ArrowRight size={16} />
-                </a>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-[#F9F9F9] p-8 rounded-2xl border border-gray-100 hover:shadow-xl transition-all h-full flex flex-col"
+                >
+                  <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37] mb-6 group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
+                    <MapPin size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{loc.city}</h3>
+                  <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-grow">
+                    {loc.address}
+                  </p>
+                  <div className="text-[#D4AF37] font-bold text-sm flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                    Buka Google Maps <ArrowRight size={16} />
+                  </div>
+                </motion.div>
+              </a>
             ))}
           </div>
         </div>
@@ -601,8 +628,11 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-1">
-              <a href="#" className="text-2xl font-serif font-bold tracking-tighter mb-6 block">
-                SUMBER <span className="text-[#D4AF37]">BERKAH</span>
+              <a href="#" className="flex items-center gap-2 mb-6 group">
+                <img src="/logo/Logo Sumber Berkah Batu Alam.webp" alt="Logo" className="w-8 h-8 object-cover rounded-full" />
+                <span className="text-xl font-serif font-bold tracking-tighter">
+                  SUMBER <span className="text-[#D4AF37]">BERKAH</span>
+                </span>
               </a>
               <p className="text-gray-400 text-sm leading-relaxed mb-8">Penyedia batu alam berkualitas tinggi untuk kebutuhan konstruksi dan dekorasi hunian Anda sejak 2010.</p>
               <div className="flex gap-4">
@@ -891,20 +921,24 @@ export default function App() {
       </AnimatePresence >
 
       {/* Floating WA */}
-      < motion.a
-        initial={{ scale: 0 }
-        }
+      <motion.a
+        initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1, rotate: 10 }}
         href="https://wa.me/6285364551484"
         target="_blank"
-        className="wa-float fixed bottom-8 right-8 bg-[#25D366] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl z-50"
+        rel="noopener noreferrer"
+        /* flex, items-center, dan justify-center memastikan gambar di tengah */
+        className="wa-float fixed bottom-8 right-8 bg-[#25D366] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl z-50 hover:bg-[#128C7E] transition-colors"
         title="Hubungi Kami via WhatsApp"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-8 h-8">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.98-.51-5.725-1.479l-6.269 1.647zm5.99-4.469l.303.18c1.483.882 3.19 1.35 4.933 1.35 5.407 0 9.808-4.401 9.808-9.808 0-2.621-1.022-5.086-2.877-6.942-1.854-1.855-4.318-2.877-6.931-2.877-5.407 0-9.808 4.401-9.808 9.808 0 2.029.544 4.016 1.571 5.711l.197.325-1.011 3.689 3.789-.996zm11.333-6.818c-.328-.164-1.94-.957-2.241-1.067-.301-.11-.52-.164-.738.164-.219.328-.848 1.067-1.039 1.286-.192.219-.383.246-.711.082-.328-.164-1.386-.511-2.641-1.63-1.039-.926-1.74-2.071-1.944-2.427-.204-.355-.022-.547.142-.711.147-.147.328-.383.492-.575.164-.192.219-.328.328-.547.11-.219.055-.411-.027-.575-.082-.164-.738-1.778-1.011-2.435-.267-.641-.539-.554-.738-.564-.192-.01-.41-.01-.629-.01s-.575.082-.875.411c-.3.328-1.148 1.123-1.148 2.738 0 1.615 1.176 3.176 1.339 3.395.164.219 2.313 3.532 5.603 4.954.783.339 1.393.541 1.87.693.785.249 1.5.214 2.066.129.63-.095 1.94-.794 2.214-1.56.274-.767.274-1.423.192-1.56-.082-.137-.3-.219-.629-.383z" />
-        </svg>
-      </motion.a >
+        {/* Mengganti SVG dengan IMG */}
+        <img
+          src="/logo/whatsapp-icon-free-png.webp" // Ganti dengan path logo WhatsApp Anda
+          alt="WhatsApp"
+          className="w-8 h-8 md:w-10 md:h-10 object-contain"
+        />
+      </motion.a>
     </div >
   );
 }
