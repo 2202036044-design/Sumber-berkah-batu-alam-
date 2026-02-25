@@ -849,7 +849,7 @@ export default function App() {
                             }}
                             className="flex-1 bg-[#D4AF37] hover:bg-[#B8962E] text-white py-4 rounded-xl font-bold transition-all shadow-xl shadow-[#D4AF37]/20 flex items-center justify-center gap-2"
                           >
-                            <ShoppingCart size={18} /> Tambah ke Keranjang
+                            <ShoppingCart size={18} className="relative left-0 md:left-4" /> Tambah ke Keranjang
                           </button>
                           <a
                             href={`https://wa.me/6285364551484?text=Halo Admin, saya ingin bertanya tentang produk: ${selectedProduct.name}`}
