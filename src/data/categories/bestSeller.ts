@@ -6,7 +6,7 @@ export const bestSellerProducts: Product[] = [
         name: "Walcloding 3cm DH",
         category: "Best Seller",
         price: 270000,
-        image: "https://placehold.co/600x600/5D4037/FFFFFF?text=Walcloding+3cm+DH",
+        image: "/logo/produk/Wallcladding/Walcloding 3cm dh 21 x 40.webp",
         bestSeller: true,
         description: "Produk unggulan dengan tekstur alami yang kuat dan ketebalan 3cm.",
         size: "21cm x 40cm"
@@ -16,7 +16,7 @@ export const bestSellerProducts: Product[] = [
         name: "Walcloding Lock Acit",
         category: "Best Seller",
         price: 270000,
-        image: "https://placehold.co/600x600/795548/FFFFFF?text=Walcloding+Lock+Acit",
+        image: "/logo/produk/Wallcladding/Walcloding lock acit 20 x 40.webp",
         bestSeller: true,
         description: "Sistem penguncian yang memudahkan pemasangan dinding batu alam.",
         size: "20cm x 40cm"
@@ -26,19 +26,19 @@ export const bestSellerProducts: Product[] = [
         name: "Paras Jogja",
         category: "Best Seller",
         price: 160000,
-        image: "https://placehold.co/600x600/A1887F/FFFFFF?text=Paras+Jogja",
+        image: "/logo/produk/Batu-Dinding/Paras Jogja 20 x 40.jpg",
         bestSeller: true,
         description: "Batu paras klasik dari Jogja, memberikan kesan hangat dan tradisional.",
         size: "20cm x 40cm"
     },
     {
         id: 4,
-        name: "Batu Candi Hitam",
+        name: "Walcloding z 4 warna 20 x 40",
         category: "Best Seller",
-        price: 150000,
-        image: "https://placehold.co/600x600/3E2723/FFFFFF?text=Batu+Candi+Hitam",
+        price: 270000,
+        image: "/logo/produk/Wallcladding/Walcloding z 4 warna 20 x 40.webp",
         bestSeller: true,
-        description: "Batu candi hitam pekat, sangat populer untuk gaya minimalis modern.",
+        description: "Batu alam premium untuk dinding dekoratif.",
         size: "20cm x 40cm"
     },
     {
@@ -46,27 +46,27 @@ export const bestSellerProducts: Product[] = [
         name: "Andesit Bintik Bakar",
         category: "Best Seller",
         price: 155000,
-        image: "https://placehold.co/600x600/546E7A/FFFFFF?text=Andesit+Bintik+Bakar",
+        image: "/logo/produk/Batu-Dinding/Bintik Bakar 20 x 40.jpg",
         bestSeller: true,
         description: "Andesit dengan tekstur bintik bakar yang anti-slip dan elegan.",
         size: "20cm x 40cm"
     },
     {
         id: 6,
-        name: "Bintik Bakar (Tebal 3cm)",
+        name: "Catur 20 x 40",
         category: "Best Seller",
-        price: 260000,
-        image: "https://placehold.co/600x600/455A64/FFFFFF?text=Bintik+Bakar+3cm",
+        price: 155000,
+        image: "/logo/produk/Batu-Dinding/Catur 20 x 40.jpg",
         bestSeller: true,
-        description: "Andesit bintik bakar ekstra tebal untuk ketahanan maksimal.",
-        size: "30cm x 60cm"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian.",
+        size: "20cm x 40cm"
     },
     {
         id: 7,
         name: "Basalto Grey",
         category: "Best Seller",
         price: 220000,
-        image: "https://placehold.co/600x600/607D8B/FFFFFF?text=Basalto+Grey",
+        image: "/logo/produk/batu-lantai/Basalto 20 X 20.png",
         bestSeller: true,
         description: "Batu basalto abu-abu dengan tampilan yang bersih dan kontemporer.",
         size: "20cm x 20cm"
@@ -75,90 +75,90 @@ export const bestSellerProducts: Product[] = [
         id: 8,
         name: "Andesit Bintik Bakar Premium",
         category: "Best Seller",
-        price: 280000,
-        image: "https://placehold.co/600x600/37474F/FFFFFF?text=Andesit+Premium",
+        price: 155000,
+        image: "/logo/produk/Batu-Dinding/Bintik Bakar 20 x 40.jpg",
         bestSeller: true,
         description: "Kualitas premium andesit bintik bakar untuk area eksklusif.",
         size: "20cm x 40cm"
     },
     {
         id: 9,
-        name: "Koral Kupang Putih (K1)",
+        name: "Camel Andesit Paras 20 x 30",
         category: "Best Seller",
-        price: 5000,
-        image: "https://placehold.co/600x600/ECEFF1/333333?text=Koral+Kupang+Putih",
+        price: 350000,
+        image: "/logo/produk/Batu-Dinding/Camel Andesit Paras 20 x 30.jpg",
         bestSeller: true,
-        description: "Koral putih bersih dari Kupang, pilihan terbaik untuk taman kering.",
-        size: "Per Kg"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian..",
+        size: "20 x 30cm"
     },
     {
         id: 10,
-        name: "Batu Alor (Hitam)",
+        name: "Camel Candi Dp 20 x 40",
         category: "Best Seller",
-        price: 4500,
-        image: "https://placehold.co/600x600/212121/FFFFFF?text=Batu+Alor+Hitam",
+        price: 350000,
+        image: "/logo/produk/Batu-Dinding2/Camel Candi Dp 20 x 40.jpg",
         bestSeller: true,
-        description: "Batu alor hitam alami yang memberikan kontras tajam di taman.",
-        size: "Per Kg"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian.",
+        size: "20 x 40cm"
     },
     {
         id: 11,
-        name: "Marmer Slab Premium",
+        name: "Walcloding z 4 warna 20 x 40",
         category: "Best Seller",
-        price: 550000,
-        image: "https://placehold.co/600x600/F5F5F5/333333?text=Marmer+Slab",
+        price: 270000,
+        image: "/logo/produk/Wallcladding/Walcloding z 4 warna 20 x 40.webp",
         bestSeller: true,
-        description: "Marmer slab lebar dengan motif alami yang mewah dan eksklusif.",
-        size: "60cm x 120cm"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian.",
+        size: "20 x 40cm"
     },
     {
         id: 12,
-        name: "Clear Coat Gloss",
+        name: "Walcloding press orange td 19 x 40",
         category: "Best Seller",
-        price: 78000,
-        image: "https://placehold.co/600x600/FFC107/FFFFFF?text=Clear+Coat+Gloss",
+        price: 260000,
+        image: "/logo/produk/Wallcladding/Walcloding press orange td 19 x 40.jpeg",
         bestSeller: true,
-        description: "Cairan pelapis glossy untuk melindungi dan mempercantik batu alam.",
-        size: "Per Liter"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian.",
+        size: "19 x 40cm"
     },
     {
         id: 13,
-        name: "Cobek Batu Asli",
+        name: "Walcloding 3 warna 30 x 30",
         category: "Best Seller",
-        price: 150000,
-        image: "https://placehold.co/600x600/424242/FFFFFF?text=Cobek+Batu+Asli",
+        price: 270000,
+        image: "/logo/produk/Wallcladding/Walcloding 3 warna 30 x 30.jpg",
         bestSeller: true,
-        description: "Cobek multifungsi dari batu alam asli, kuat dan tahan lama.",
-        size: "Diameter 30cm"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian.",
+        size: "30 x 30cm"
     },
     {
         id: 14,
         name: "Walcloding Pacito Variasi",
         category: "Best Seller",
         price: 270000,
-        image: "https://placehold.co/600x600/8D6E63/FFFFFF?text=Pacito+Variasi",
+        image: "/logo/produk/Wallcladding/Walcloding pacito variasi 20 x 40.jpeg",
         bestSeller: true,
         description: "Variasi tekstur pacito yang unik untuk dinding artistik.",
         size: "20cm x 40cm"
     },
     {
         id: 15,
-        name: "Batu Palimanan RTA",
+        name: "Walcloding pacito 20 x 50",
         category: "Best Seller",
-        price: 150000,
-        image: "https://placehold.co/600x600/D7CCC8/333333?text=Palimanan+RTA",
+        price: 270000,
+        image: "/logo/produk/Wallcladding/Walcloding pacito 20 x 50.jpg",
         bestSeller: true,
-        description: "Ketajaman tekstur Rata Alam (RTA) dari batu Palimanan.",
-        size: "20cm x 40cm"
+        description: "Batu alam dinding berkualitas untuk keindahan hunian.",
+        size: "20cm x 50cm"
     },
     {
         id: 16,
-        name: "Basalto 2020",
+        name: "Matahari Variasi 15 x 30",
         category: "Best Seller",
-        price: 220000,
-        image: "https://placehold.co/600x600/546E7A/FFFFFF?text=Basalto+2020",
+        price: 150000,
+        image: "/logo/produk/Batu-Dinding/Matahari Variasi 15 x 30.jpg",
         bestSeller: true,
-        description: "Populer untuk lantai dan area dekoratif luar ruangan.",
-        size: "20cm x 20cm"
+        description: "Populer untuk area dekoratif luar ruangan.",
+        size: "15cm x 30cm"
     }
 ];

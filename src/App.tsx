@@ -11,6 +11,7 @@ import {
   Mail,
   Twitter,
   Instagram,
+  Facebook,
   ArrowRight,
   ChevronRight,
   Plus,
@@ -161,9 +162,9 @@ export default function App() {
       />
 
       {/* Navbar */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16 md:h-20' : 'h-20 md:h-24'}`}>
+      <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className={`flex justify-between items-center transition-all duration-300 transform-gpu ${isScrolled ? 'h-16 md:h-20' : 'h-20 md:h-24'}`}>
             <div className="flex items-center">
               <a href="#" className="flex items-center gap-2 md:gap-3 group">
                 <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-transform group-hover:scale-110">
@@ -532,30 +533,37 @@ export default function App() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { cat: 'Tips Interior', title: 'Cara Merawat Batu Alam Agar Tetap Berkilau', desc: 'Batu alam memerlukan perawatan khusus agar tekstur dan warnanya tidak pudar seiring waktu...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery3.jpg' },
-              { cat: 'Tren Desain', title: '5 Jenis Batu Alam Terpopuler untuk Dinding Luar', desc: 'Memilih batu alam untuk eksterior harus mempertimbangkan ketahanan terhadap cuaca ekstrem...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-gallery6.jpg' },
-              { cat: 'Panduan', title: 'Mengenal Perbedaan Tekstur Batu Andesit dan Palimanan', desc: 'Setiap jenis batu memiliki karakteristik unik yang cocok untuk fungsi ruangan yang berbeda...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-home.jpg' },
+              { cat: 'Tips Interior', title: 'Cara Merawat Batu Alam Agar Tetap Berkilau', desc: 'Batu alam memerlukan perawatan khusus agar tekstur dan warnanya tidak pudar seiring waktu...', img: '/logo/produk/Wallcladding/Walcloding press orange td 19 x 40.jpeg', slug: 'cara-merawat-batu-alam' },
+              { cat: 'Tren Desain', title: '5 Jenis Batu Alam Terpopuler untuk Dinding Luar', desc: 'Memilih batu alam untuk eksterior harus mempertimbangkan ketahanan terhadap cuaca ekstrem...', img: '/logo/produk/Wallcladding/Walcloding lock dp 20 x 40.jpg', slug: 'jenis-batu-alam-populer' },
+              { cat: 'Panduan', title: 'Mengenal Perbedaan Tekstur Batu Andesit dan Palimanan', desc: 'Setiap jenis batu memiliki karakteristik unik yang cocok untuk fungsi ruangan yang berbeda...', img: '/logo/produk/gallery/sumber-berkah-batu-alam-home.jpg', slug: 'perbedaan-tekstur-andesit-palimanan' },
             ].map((art, idx) => (
-              <motion.div
+              <a
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+                href={`/artikel/${art.slug}.html`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block active:scale-[0.98] transition-all"
               >
-                <div className="overflow-hidden h-64">
-                  <img src={art.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                </div>
-                <div className="p-8">
-                  <p className="text-[#D4AF37] text-[10px] font-black uppercase tracking-widest mb-4">{art.cat}</p>
-                  <h3 className="text-2xl font-black mb-4 group-hover:text-[#D4AF37] transition-colors leading-tight">{art.title}</h3>
-                  <p className="text-gray-500 text-sm mb-8 leading-relaxed">{art.desc}</p>
-                  <a href="#" className="inline-flex items-center gap-2 font-black text-sm text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 hover:gap-4 transition-all">
-                    Baca Selengkapnya
-                  </a>
-                </div>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-full"
+                >
+                  <div className="overflow-hidden h-64">
+                    <img src={art.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  </div>
+                  <div className="p-8">
+                    <p className="text-[#D4AF37] text-[10px] font-black uppercase tracking-widest mb-4">{art.cat}</p>
+                    <h3 className="text-2xl font-black mb-4 group-hover:text-[#D4AF37] transition-colors leading-tight">{art.title}</h3>
+                    <p className="text-gray-500 text-sm mb-8 leading-relaxed">{art.desc}</p>
+                    <span className="inline-flex items-center gap-2 font-black text-sm text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 group-hover:gap-4 transition-all">
+                      Baca Selengkapnya
+                    </span>
+                  </div>
+                </motion.div>
+              </a>
             ))}
           </div>
         </div>
@@ -572,7 +580,7 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                city: 'Bukittinggi',
+                city: 'Biaro',
                 address: 'Jl. Raya Bukittinggi - Payakumbuh No.Km, RW.7, Biaro Gadang, Kec. Ampek Angkek, Kabupaten Agam, Sumatera Barat 26192',
                 mapUrl: 'https://maps.app.goo.gl/5xjUKzvLWMgLreXB6?g_st=aw'
               },
@@ -587,7 +595,7 @@ export default function App() {
                 mapUrl: 'https://maps.app.goo.gl/YpGV4gtERqptMwoWA?g_st=aw'
               },
               {
-                city: 'Payakumbuh',
+                city: 'Bukittinggi',
                 address: 'Jl. Raya Bukittinggi - Payakumbuh No.KM, RW.6, Biaro Gadang, Kec. Ampek Angkek, Kabupaten Agam, Sumatera Barat 26191',
                 mapUrl: 'https://maps.app.goo.gl/gqTHnHxjEN7pvuMy7?g_st=aw'
               },
@@ -637,10 +645,15 @@ export default function App() {
               <p className="text-gray-400 text-sm leading-relaxed mb-8">Penyedia batu alam berkualitas tinggi untuk kebutuhan konstruksi dan dekorasi hunian Anda sejak 2010.</p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors">
-                  <Twitter size={18} />
+                  <Facebook size={18} />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors">
                   <Instagram size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -655,8 +668,18 @@ export default function App() {
             <div>
               <h4 className="font-bold mb-6 uppercase tracking-widest text-xs">Kategori</h4>
               <ul className="space-y-4 text-gray-400 text-sm">
-                {['Batu Dinding', 'Batu Lantai', 'Batu Taman', 'Aksesoris'].map(item => (
-                  <li key={item}><a href="#katalog" className="hover:text-[#D4AF37] transition-colors">{item}</a></li>
+                {['Best Seller', 'Wallcladding', 'Batu Dinding', 'Batu Lantai', 'Koral & Taman', 'Marmer Dll'].map(item => (
+                  <li key={item}>
+                    <button
+                      onClick={() => {
+                        setCurrentFilter(item);
+                        document.getElementById('katalog')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="hover:text-[#D4AF37] transition-colors cursor-pointer text-left w-full"
+                    >
+                      {item}
+                    </button>
+                  </li>
                 ))}
               </ul>
             </div>
