@@ -163,7 +163,7 @@ export default function App() {
 
       {/* Navbar */}
       <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full">
           <div className={`flex justify-between items-center transition-all duration-300 transform-gpu ${isScrolled ? 'h-16 md:h-20' : 'h-20 md:h-24'}`}>
             <div className="flex items-center">
               <a href="#" className="flex items-center gap-2 md:gap-3 group">
@@ -184,7 +184,7 @@ export default function App() {
               {['Beranda', 'Tentang', 'Katalog', 'Galeri', 'Artikel', 'Lokasi'].map((item) => (
                 <a
                   key={item}
-                  href={item === 'Artikel' ? '#' : `#${item.toLowerCase()}`}
+                  href={`#${item.toLowerCase()}`}
                   className="hover:text-[#D4AF37] transition-colors relative group"
                 >
                   {item}
@@ -193,7 +193,7 @@ export default function App() {
               ))}
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 md:gap-4">
               <button
                 onClick={() => setIsCartOpen(true)}
                 className={`relative p-3 rounded-xl backdrop-blur-md border transition-all group flex items-center justify-center ${isScrolled
@@ -232,7 +232,7 @@ export default function App() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full right-4 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden md:hidden"
+              className="absolute top-full right-6 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden md:hidden"
             >
               {['Beranda', 'Tentang', 'Katalog', 'Galeri', 'Artikel', 'Lokasi'].map((item) => (
                 <a
@@ -524,7 +524,7 @@ export default function App() {
       </section >
 
       {/* Artikel Terbaru */}
-      < section className="py-24 bg-[#F9F9F9] px-4" >
+      < section id="artikel" className="py-24 bg-[#F9F9F9] px-4" >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h4 className="text-[#D4AF37] uppercase tracking-widest font-bold mb-4">Blog & Tips</h4>
